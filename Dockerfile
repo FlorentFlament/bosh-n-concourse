@@ -56,6 +56,8 @@ RUN tmpfile=$(tempfile) \
 RUN wget -q -O /usr/local/bin/bbl ${BBL_URL} \
     && chmod +x /usr/local/bin/bbl
 
+COPY bnc.sh /usr/local/bin/bnc.sh
+
 RUN mkdir /work
 WORKDIR /work
 
