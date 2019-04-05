@@ -1,6 +1,8 @@
 Bosh & Concourse
 ================
 
+WARNING: This is not a supported tool, use it at your own risk !
+
 Bosh & Concourse (or bnc) is yet another tool to deploy Bosh and
 Concourse (with UAA and Credhub).
 
