@@ -13,6 +13,9 @@ But when it comes to deploy Concourse, there are still a couple of
 [manual steps to be performed][1]. Bnc just does that in a script
 (`bnc.sh`).
 
+There are other tools like [Control Tower][7] and [BUCC][3], which can
+be good alternatives depending on the use case.
+
 Also it provides a Dockerfile, that builds a container with all the
 tooling required to run Bnc (including Bosh, Terraform, Bbl and
 Bnc). This container is automatically built and available as
@@ -124,6 +127,7 @@ Bnc currently only works with GCP.
 Related tools:
 * [bosh-bootloader][2]
 * [BUCC][3]
+* [Control Tower][7]
 
 
 [1]: https://github.com/cloudfoundry/bosh-bootloader/blob/master/docs/concourse.md
@@ -132,3 +136,4 @@ Related tools:
 [4]: https://github.com/cloudfoundry/bosh-bootloader/blob/master/docs/getting-started-gcp.md
 [5]: https://github.com/cloudfoundry/bosh-bootloader/blob/master/docs/howto-target-bosh-director.md
 [6]: https://github.com/FlorentFlament/bosh-n-concourse/blob/master/Dockerfile
+[7]: https://github.com/EngineerBetter/control-tower
