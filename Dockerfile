@@ -10,6 +10,7 @@ ARG BOSH_URL=https://github.com/cloudfoundry/bosh-cli/releases/download/v5.4.0/b
 ARG TERRAFORM_URL=https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip
 ARG CREDHUB_URL=https://github.com/cloudfoundry-incubator/credhub-cli/releases/download/2.3.0/credhub-linux-2.3.0.tgz
 ARG BBL_URL=https://github.com/cloudfoundry/bosh-bootloader/releases/download/v7.4.0/bbl-v7.4.0_linux_x86-64
+ARG FLY_URL=https://github.com/concourse/concourse/releases/download/v5.1.0/fly-5.1.0-linux-amd64.tgz
 
 RUN apt-get update
 
@@ -55,6 +56,11 @@ RUN tmpfile=$(tempfile) \
 
 RUN wget -q -O /usr/local/bin/bbl ${BBL_URL} \
     && chmod +x /usr/local/bin/bbl
+
+RUN tmpfile=$(tempfile) \
+    && wget -q -O ${tmpfile} ${FLY_URL} \
+    && tar xf ${tmpfile} -C /usr/local/bin/ \
+    && rm ${tmpfile}
 
 COPY bnc.sh /usr/local/bin/bnc.sh
 
